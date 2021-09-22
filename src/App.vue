@@ -1,32 +1,25 @@
+<!--////////// APP.VUE, COMPONENTE PRINCIPAL QUE SE ENCARGA DE MOSTRAR OTROS COMPONENTES EN LA VISTA ///////// -->
+<!-- Dentro del div se muestra el componente Navbar, que contiene la barra de navegación conectada al router-view que está dentro del <main>
+</main>, este se ocupa de mostrar las vistas configuradas en router.js   -->
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+  <div>
+    <Navbar />
+    <main>
+      <router-view />
+    </main>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<!-- Dentro del script se importa el componente Navbar para que funcione -->
 
-#nav {
-  padding: 30px;
-}
+<script>
+import Navbar from "./components/Navbar.vue";
+export default {
+  components: {
+    Navbar,
+  },
+  name: "App",
+};
+</script>
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+<style scoped></style>
